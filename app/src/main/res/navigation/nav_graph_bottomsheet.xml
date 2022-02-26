@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_bottomsheet"
+    app:startDestination="@id/welcomeScreen">
+
+    <fragment
+        android:id="@+id/welcomeScreen"
+        android:name="com.example.coadingchallengenavigationcomponent.WelcomeScreen"
+        android:label="welcome_screen_fragment"
+        tools:layout="@layout/welcome_screen_fragment" >
+        <action
+            android:id="@+id/action_welcomeScreen_to_termsAndCondition"
+            app:destination="@id/termsAndCondition" />
+        <action
+            android:id="@+id/action_welcomeScreen_to_enterName"
+            app:destination="@id/enterName"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterName"
+        android:name="com.example.coadingchallengenavigationcomponent.EnterName"
+        android:label="rename_fragment"
+        tools:layout="@layout/rename_fragment" >
+        <action
+            android:id="@+id/action_enterName_to_enterEmail"
+            app:destination="@id/enterEmail" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterEmail"
+        android:name="com.example.coadingchallengenavigationcomponent.EnterEmail"
+        android:label="enter_email_fragment"
+        tools:layout="@layout/enter_email_fragment" >
+        <action
+            android:id="@+id/action_enterEmail_to_showData"
+            app:destination="@id/showData" />
+    </fragment>
+    <fragment
+        android:id="@+id/termsAndCondition"
+        android:name="com.example.coadingchallengenavigationcomponent.TermsAndCondition"
+        android:label="terms_and_condition_fragment"
+        tools:layout="@layout/terms_and_condition_fragment" />
+    <fragment
+        android:id="@+id/showData"
+        android:name="com.example.coadingchallengenavigationcomponent.ShowData"
+        android:label="show_data_fragment"
+        tools:layout="@layout/show_data_fragment" >
+        <action
+            android:id="@+id/action_showData_to_termsAndCondition"
+            app:destination="@id/termsAndCondition" />
+    </fragment>
+</navigation>
